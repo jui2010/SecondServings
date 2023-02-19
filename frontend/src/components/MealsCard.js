@@ -1,68 +1,53 @@
-import React, { Component, Fragment} from 'react'
+import React, { Component} from 'react'
 import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-
+import AddCircle from '@material-ui/icons/AddCircle'
+import RemoveCircle from '@material-ui/icons/RemoveCircle'
 import withStyles from '@material-ui/core/styles/withStyles'
-
-import meals from '../util/meals.json'
 
 import {connect} from 'react-redux'
 
 const styles = (theme) => ({
     ...theme.spread,
-    section : {
-        fontFamily: 'Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif',
-        fontSize: '20px',
+    mealDiv : {
+        marginTop : '10px',
+        width:'63vh',
+        border : '1px solid #c7c5c5',
+        height: '120px'
     },
-    heading : {
-        fontFamily: 'Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif',
-        fontSize : '45px',
-        fontWeight : 'bold',
+    sideDiv : {
+        marginTop : '10px'
     },
-    name: {
-        fontWeight : 'bold',
-        fontSize : '50px'  
+    l0 : {
+        paddingLeft : '10px',
     },
-    address: {
-        fontWeight : 'bold',
-        fontSize : '15px'  
-    },
-    bookslot: {
-        fontWeight : 'bold',
-        fontSize : '35px',
-        marginTop : '15px'  
-    },
-    button : {
-        fontFamily: 'Bebas Neue',
-        fontSize : '30px',
-        marginTop : '30px',
-        marginBottom : '5px',
-        color : 'black'
-    },
-    total : {
-        fontSize : '30px',
-    },
-    paper : {
-        padding : '20px',
-        width : '120px',
-        height: '160px'
-    },
-    meal : {
-        marginTop : '30px'
-    },
-    nameDiv:{
-        fontWeight: 'bold'
-    },
-    wip : {
-        fontFamily: 'Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif',
+    l1 : {
+        marginTop : '25px',
         fontSize : '15px',
-        fontWeight : 'bold',
-        backgroundColor: '#80e27e'
+        fontWeight : '800',
+    },
+    l2 : {
+        marginTop : '2px',
+        fontSize : '13px',
+        fontWeight : '700',
+        color : '#4f4f4f'
+    },
+    l3 : {
+        marginTop : '2px',
+        fontSize : '13px',
+        fontWeight : '700',
+    },
+    icons : {
+        fontSize : '25px',
+        color : '#b5b5b5'
     }
 })
 
 export class MealsCard extends Component {
+
+    state = {
+        open : false,
+        quantity : 1,
+    }
 
     handleChange = (event) =>{
         this.setState({
@@ -70,64 +55,47 @@ export class MealsCard extends Component {
         })
     }
 
-    showMeals(){
-        const {classes} = this.props
-        const {vendor} = this.props.data
-        var rows = meals.reduce((rows, meal) => {
-            if (meal.vendorName === vendor.name) {
-                rows.push(
-                    <Grid container item sm={4} className={classes.meal} >
-                        <Paper elevation={3} className={classes.paper} >
-                            <div className={classes.imgDiv}>
-                                {meal.name}
-                            </div>
-                        </Paper>
-                    </Grid>
-                )
-            } 
-          return rows
-        }, [])
-    
-        return (
-          <Fragment>{rows}</Fragment>
-        )
-      }
+    handleDecrease = () => {
+        this.setState({
+            quantity : this.state.quantity === 1 ? 1 : this.state.quantity - 1
+        })
+    }
+
+    handleIncrease = () => {
+        this.setState({
+            quantity : this.state.quantity + 1
+        })
+    }
 
     render() {
         const { classes } = this.props
-        const {vendor} = this.props.data
+        const { meal } = this.props
         return (
-            <Grid container item alignItems="center" justify="center">
-                
-                {Object.keys(vendor).length === 0 &&
-                    <Grid item sm={12} className ={classes.section} >
-                        <div className ={classes.heading} >
-                            Choose a location
-                        </div>
+            <Grid container item sm={12} className={classes.mealDiv} >
+                <Grid container item sm={3} style={{backgroundImage:`url(${meal.photoURL})`, backgroundSize: 'cover'}}>
+                </Grid>
+                <Grid container item sm={6} className={classes.l0}  >
+                    <Grid container item sm={12} className={classes.l1}  >
+                        {meal.name}
                     </Grid>
-                }
-
-                {Object.keys(vendor).length > 0 &&
-                <Fragment >
-                    
-                    {/* name */}
-                    <Grid item sm={12} className ={classes.section} style={{border: '1px solid black'}}>
-                        <div className ={classes.name} >
-                            {vendor.name}
-                        </div>
+                    <Grid container item sm={12} className={classes.l2}  >
+                        {meal.ingredients}
                     </Grid>
-
-                    {/* address */}
-                    <Grid item sm={12}  className ={classes.section} style={{border: '1px solid black'}}>
-                        <div className ={classes.address} >
-                            <LocationOnIcon/> [{vendor.address}]
-                        </div>
+                    <Grid container item sm={12} className={classes.l3}  >
+                        ${meal.price}
                     </Grid>
-
-                    {/* showing meals info */}
-                    {this.showMeals()}
-                </Fragment>
-                }         
+                </Grid>
+                <Grid container item sm={3} className={classes.sideDiv} >
+                    <Grid item xs={1}><RemoveCircle onClick={this.handleDecrease} className={classes.icons} />
+                    </Grid>
+                    <Grid item xs={1} style={{paddingLeft: '20px', fontSize : '20px', fontWeight : '600', marginLeft: '5px'}}>{this.state.quantity}
+                    </Grid>
+                    <Grid item xs={1}><AddCircle onClick={this.handleIncrease} className={classes.icons} style={{marginLeft: '15px'}}/>
+                    </Grid>
+                    <Grid item xs={12} style={{paddingTop: '30px', fontSize : '13px', marginLeft:'30px', fontWeight : '600'}}>
+                        Qty : {meal.qty}
+                    </Grid>
+                </Grid>
             </Grid>
         )
     }

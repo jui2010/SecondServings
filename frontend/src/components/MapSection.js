@@ -65,7 +65,7 @@ class MapSection extends Component {
       <Fragment>
 
         {/* actual map */}
-        <Map style={{height: '80vh'}} center={[this.state.lat, this.state.lng]} zoom={15}>
+        <Map style={{height: '89vh'}} center={[this.state.lat, this.state.lng]} zoom={16}>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
