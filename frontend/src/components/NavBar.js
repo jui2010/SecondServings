@@ -5,13 +5,12 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Button from '@material-ui/core/Button'
 import withStyles from '@material-ui/core/styles/withStyles'
 import HomeIcon from '@material-ui/icons/Home'
-import CameraIcon from '@material-ui/icons/Camera'
 import Avatar from '@material-ui/core/Avatar'
 
 import { Link } from 'react-router-dom'
 
 import { useAuth0 } from "@auth0/auth0-react"
-
+import logo from '../assets/logo.png'
 import store from '../redux/store'
 import { SET_AUTHENTICATED } from '../redux/types'
 
@@ -76,14 +75,9 @@ const NavBar = (props) => {
         <div >
             <AppBar position="relative" color="transparent" >
                 <Toolbar style={{ height: 50}}>
-
-                    {/* logog */}
-                    <CameraIcon color="secondary" className={classes.icon}/>
-
                     {/* title */}
                     <div className={classes.title}>
-                    &nbsp;&nbsp;
-                    Second Servings
+                        <img src={logo} alt="Profile" width="300" height="50" className={classes.logo}/>
                     </div>
 
                     {/* login */}

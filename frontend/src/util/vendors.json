@@ -1,19 +1,31 @@
 
 [
 	{
-	  "name": "Benson Bon Appetit - SCU",
-	  "lat": 37.347982,
-	  "long": -121.939128,
-	  "address": "500 El Camino Real, Santa Clara 95153",
-	  "noOfMeals":5,
-	  "picUrl": "https://www.usnews.com/dims4/USNEWS/720e1a2/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fmedia.beam.usnews.com%2F65%2F239a8254f5a651654163bad9fee55a%2FJL160917_4111_CampusBeauty_0259.jpg"
+		"id": 1,
+		"name": "Benson Bon Appetit - SCU",
+		"lat": 37.347982,
+		"long": -121.939128,
+		"address": "500 El Camino Real, Santa Clara 95153",
+		"noOfMeals":5,
+		"picUrl": "https://www.usnews.com/dims4/USNEWS/720e1a2/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fmedia.beam.usnews.com%2F65%2F239a8254f5a651654163bad9fee55a%2FJL160917_4111_CampusBeauty_0259.jpg"
 	},
 	{
+		"id": 2,
 		"name":"Taco Bell",
         "lat":37.345159,
         "long":-121.935725,
         "address":"2555 The Alameda, Santa Clara, CA 95050",
         "noOfMeals":4,
 		"picUrl":"https://c8.alamy.com/comp/BJMJBY/taco-bell-drive-thru-restaurant-in-san-jose-california-BJMJBY.jpg"
+	},
+	{
+		"id": 2,
+		"name":"Pizza My Heart",
+        "lat":37.346235,
+        "long":-121.938074,
+        "address":"302 The Alameda, Santa Clara, CA 95050",
+        "noOfMeals":8,
+		"picUrl":"https://media-cdn.tripadvisor.com/media/photo-s/1a/48/be/7a/20191111-185952-largejpg.jpg"
 	}
+
 ]

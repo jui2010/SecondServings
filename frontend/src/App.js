@@ -17,7 +17,9 @@ import store from './redux/store'
 // pages
 import home from './pages/home'
 import welcome from './pages/welcome'
+import vendor from './pages/vendor'
 import checkout from './pages/checkout'
+import orderSuccess from './pages/orderSuccess'
 
 import NavBar from './components/NavBar'
 
@@ -35,7 +37,9 @@ class App extends Component{
                 <Route exact path="/" component={welcome} />
                 <Route exact path="/home" component={home} />
                 <Route exact path="/welcome" component={welcome} />
+                <Route exact path="/vendor" component={vendor} />
                 <Route exact path="/checkout" component={checkout} />
+                <Route exact path="/orderSuccess" component={orderSuccess} />
               </Switch>
             </div>
           </Router>

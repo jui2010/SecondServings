@@ -16,5 +16,41 @@
     "ingredients":"egg, basmati rice, spring onion, chicken",
     "qty": 6,
     "photoURL":"https://www.teaforturmeric.com/wp-content/uploads/2020/11/Pakistani-Chicken-Biryani-2-e1608874346462.jpg"
+  },
+  {
+    "id" : "3",
+    "vendorName": "Taco Bell",
+    "name":"Burrito",
+    "price":3.27,
+    "ingredients":"beans, tortilla, chicken, rice",
+    "qty": 4,
+    "photoURL":"https://www.tacobell.com/images/24511_beefy_potato-rito_750x660.jpg"
+  },
+  {
+    "id" : "4",
+    "vendorName": "Taco Bell",
+    "name":"Tacos",
+    "price":2.08,
+    "ingredients":"chicken, salsa, avocado, lettuce",
+    "qty": 6,
+    "photoURL":"https://dairyfarmersofcanada.ca/sites/default/files/image_file_browser/conso_recipe/2021/South%20Of%20The%20Border%20Beef%20Tacos.jpg"
+  },
+  {
+    "id" : "5",
+    "vendorName": "Taco Bell",
+    "name":"Quesadilla",
+    "price":3.17,
+    "ingredients":"tortilla, guacamole, chicken",
+    "qty": 4,
+    "photoURL":"https://www.simplejoy.com/wp-content/uploads/2018/02/taco-bell-quesadilla_.jpg"
+  },
+  {
+    "id" : "5",
+    "vendorName": "Pizza My Heart",
+    "name":"Cheese Pizza",
+    "price":3.27,
+    "ingredients":"tomato, cheese",
+    "qty": 2,
+    "photoURL":"https://images.getbento.com/accounts/a40d9fb88b9b4526b3c94b8d94004de7/media/images/9387Manresa_Slice.jpg?w=1800&fit=max&auto=compress,format&h=1800"
   }
 ]

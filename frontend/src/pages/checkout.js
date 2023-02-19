@@ -46,6 +46,7 @@ const styles = (theme) => ({
     list : {
         paddingBottom : '10px',
         marginBottom : '10px',
+        marginLeft: '10px',
         borderBottom : '1px solid #dedede'
     },
     items : {
@@ -56,7 +57,7 @@ const styles = (theme) => ({
     },
     itemsName : {
         fontSize : '30px',
-        fontWeight : '600',
+        fontWeight : '700',
         padding : '20px',
         width : '100%'
     },
@@ -90,11 +91,12 @@ const styles = (theme) => ({
         fontSize : '20px',
         fontWeight : '600',
         padding : '20px',
-        width : '100%'
     },
     instructionsBox : {
         border : '1px solid #dedede',
-        marginLeft : '20px'
+        marginLeft : '20px',
+        width : '500px'
+
     }
 })
 
@@ -111,7 +113,7 @@ class checkout extends Component {
         const { selectedMeals } = this.props.data
         return selectedMeals.map(meal => (
                 <Grid container item xs={12} key={meal.mealId} className={classes.list}>
-                    <Grid container item sm={3} style={{backgroundImage:`url(${meal.photoURL})`, backgroundSize: 'cover'}}>
+                    <Grid container item sm={3} style={{backgroundImage:`url(${meal.photoURL})`, backgroundSize: 'cover', height: '120px'}}>
                     </Grid>
                     <Grid container item sm={6} className={classes.l0}  >
                         <Grid container item sm={12} className={classes.l1}  >
@@ -123,6 +125,9 @@ class checkout extends Component {
                         <Grid container item sm={12} className={classes.l3}  >
                             ${meal.price}
                         </Grid>
+                    </Grid>
+                    <Grid container item sm={3} style={{fontWeight: '800', fontSize: '30px', marginTop: '30px'}}>
+                        × {meal.quantity}
                     </Grid>
                 </Grid>
             ))
@@ -154,15 +159,14 @@ class checkout extends Component {
                     <div className={classes.itemsName}>
                         {name} 
                     </div>
-                    <div className={classes.itemsName}>
+                    <div style={{marginLeft: '20px', fontWeight: '800', color: '#404040'}}>
                         ({address})
                     </div>
                     <div className={classes.items}>
                         Your Items
                     </div>
-                    {/* <Grid item sm={12} className={classes.itemsList} > */}
-                        {this.displayOrders()}
-                    {/* </Grid> */}
+                    
+                    {this.displayOrders()}
 
                     <div className={classes.instructions}>
                         Special Instructions
@@ -172,7 +176,6 @@ class checkout extends Component {
                         name="instructions"
                         className={classes.instructionsBox}
                         onChange={this.handleChange}
-                        fullWidth
                         multiline
                     />
                 </Grid>

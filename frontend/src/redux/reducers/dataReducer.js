@@ -1,8 +1,19 @@
-import {SET_VENDOR_LOCATION, SET_SELECTED_MEALS} from '../types'
+import {SET_VENDOR_LOCATION, SET_SELECTED_MEALS, ADD_MEAL} from '../types'
 
 const initialState = {
     vendor: {},
-    selectedMeals: []
+    selectedMeals: [], 
+    meals : [
+        {
+            "id" : "1",
+            "vendorName": "Benson Bon Appetit - SCU",
+            "name":"Salad",
+            "price":3.27,
+            "ingredients":"egg, lettuce, beans, chicken",
+            "qty": 4,
+            "photoURL":"https://64.media.tumblr.com/09c19064292cb5178b5362661354b0dd/795d2370ed39d1d6-0f/s640x960/0a45acfad42ddfbd2cc58050256029967474f4b1.jpg"
+        }
+    ]
 }
 
 export default function (state = initialState, action){
@@ -30,6 +41,13 @@ export default function (state = initialState, action){
         return {
             ...state,
         }
+
+    case ADD_MEAL : 
+        state.meals.push(action.payload)
+        return {
+            ...state,
+        }
+
 
     default : 
         return {

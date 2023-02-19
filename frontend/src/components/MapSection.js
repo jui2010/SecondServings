@@ -23,8 +23,8 @@ var ic = Leaflet.icon({
 class MapSection extends Component {
 
   state = {
-    lat: 37.347982,
-    lng: -121.939128,
+    lat: 37.346235,
+    lng:-121.938074,
     name : '',
     open: false
   }
