@@ -77,7 +77,7 @@ const NavBar = (props) => {
                 <Toolbar style={{ height: 50}}>
                     {/* title */}
                     <div className={classes.title}>
-                        <img src={logo} alt="Profile" width="300" height="50" className={classes.logo}/>
+                        <img src={logo} alt="Profile" width="300" height="50" className={classes.logo} component = {Link} to="/welcome" />
                     </div>
 
                     {/* login */}
