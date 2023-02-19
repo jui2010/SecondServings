@@ -1,0 +1,17 @@
+
+[
+	{
+	  "name": "Benson Bon Appetit - Santa Clara University",
+	  "lat": 37.347982,
+	  "long": -121.939128,
+	  "address": "500 El Camino Real, Santa Clara 95153",
+	  "noOfMeals":5
+	},
+	{
+		"name":"Taco Bell",
+        "lat":37.345159,
+        "long":-121.935725,
+        "address":"2555 The Alameda, Santa Clara, CA 95050",
+        "noOfMeals":4
+	}
+]
