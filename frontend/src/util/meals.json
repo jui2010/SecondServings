@@ -1,47 +1,18 @@
 [
   {
+    "id" : "1",
     "vendorName": "Benson Bon Appetit - SCU",
     "name":"Salad",
-    "price":5.57,
+    "price":3.27,
     "ingredients":"egg, lettuce, beans, chicken",
     "qty": 4,
     "photoURL":"https://64.media.tumblr.com/09c19064292cb5178b5362661354b0dd/795d2370ed39d1d6-0f/s640x960/0a45acfad42ddfbd2cc58050256029967474f4b1.jpg"
   },
   {
+    "id" : "2",
     "vendorName": "Benson Bon Appetit - SCU",
     "name":"Chicken Biryani",
-    "price":8.57,
-    "ingredients":"egg, basmati rice, spring onion, chicken",
-    "qty": 6,
-    "photoURL":"https://www.teaforturmeric.com/wp-content/uploads/2020/11/Pakistani-Chicken-Biryani-2-e1608874346462.jpg"
-  },
-  {
-    "vendorName": "Benson Bon Appetit - SCU",
-    "name":"Salad",
     "price":5.57,
-    "ingredients":"egg, lettuce, beans, chicken",
-    "qty": 4,
-    "photoURL":"https://64.media.tumblr.com/09c19064292cb5178b5362661354b0dd/795d2370ed39d1d6-0f/s640x960/0a45acfad42ddfbd2cc58050256029967474f4b1.jpg"
-  },
-  {
-    "vendorName": "Benson Bon Appetit - SCU",
-    "name":"Chicken Biryani",
-    "price":8.57,
-    "ingredients":"egg, basmati rice, spring onion, chicken",
-    "qty": 6,
-    "photoURL":"https://www.teaforturmeric.com/wp-content/uploads/2020/11/Pakistani-Chicken-Biryani-2-e1608874346462.jpg"
-  },{
-    "vendorName": "Benson Bon Appetit - SCU",
-    "name":"Salad",
-    "price":5.57,
-    "ingredients":"egg, lettuce, beans, chicken",
-    "qty": 4,
-    "photoURL":"https://64.media.tumblr.com/09c19064292cb5178b5362661354b0dd/795d2370ed39d1d6-0f/s640x960/0a45acfad42ddfbd2cc58050256029967474f4b1.jpg"
-  },
-  {
-    "vendorName": "Benson Bon Appetit - SCU",
-    "name":"Chicken Biryani",
-    "price":8.57,
     "ingredients":"egg, basmati rice, spring onion, chicken",
     "qty": 6,
     "photoURL":"https://www.teaforturmeric.com/wp-content/uploads/2020/11/Pakistani-Chicken-Biryani-2-e1608874346462.jpg"

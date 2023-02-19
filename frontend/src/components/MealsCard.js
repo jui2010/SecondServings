@@ -4,6 +4,7 @@ import AddCircle from '@material-ui/icons/AddCircle'
 import RemoveCircle from '@material-ui/icons/RemoveCircle'
 import withStyles from '@material-ui/core/styles/withStyles'
 
+import {setSelectedMeals} from '../redux/actions/dataActions'
 import {connect} from 'react-redux'
 
 const styles = (theme) => ({
@@ -46,7 +47,7 @@ export class MealsCard extends Component {
 
     state = {
         open : false,
-        quantity : 1,
+        quantity : 0,
     }
 
     handleChange = (event) =>{
@@ -65,6 +66,17 @@ export class MealsCard extends Component {
         this.setState({
             quantity : this.state.quantity + 1
         })
+
+        let meal = {
+            mealId : this.props.meal.id,
+            name: this.props.meal.name,
+            price: this.props.meal.price,
+            ingredients: this.props.meal.ingredients,
+            photoURL: this.props.meal.photoURL,
+            quantity : this.state.quantity + 1
+        }
+
+        this.props.setSelectedMeals(meal)
     }
 
     render() {
@@ -105,4 +117,4 @@ const mapStateToProps = (state) => ({
     data : state.data
 })
 
-export default connect(mapStateToProps )(withStyles(styles)(MealsCard))
+export default connect(mapStateToProps, {setSelectedMeals} )(withStyles(styles)(MealsCard))

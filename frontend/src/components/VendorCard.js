@@ -6,6 +6,8 @@ import meals from '../util/meals.json'
 
 import {connect} from 'react-redux'
 import MealsCard from './MealsCard'
+import Button from '@material-ui/core/Button'
+import { Link } from 'react-router-dom'
 
 const styles = (theme) => ({
     ...theme.spread,
@@ -56,7 +58,7 @@ export class VendorCard extends Component {
         }, [])
     
         return (
-          <div style={{overflowY: 'auto', height:'440px'}}>{rows}</div>
+          <div style={{overflowY: 'auto', height:'380px'}}>{rows}</div>
         )
       }
 
@@ -98,6 +100,10 @@ export class VendorCard extends Component {
 
                         {/* showing meals info */}
                         {this.showMeals()}
+
+                        <Button  variant="contained" color ="secondary" component = {Link} to="/checkout">
+                            <b style={{fontSize:"25px",color:"#fff3e0", fontFamily: 'Bebas Neue'}}>Checkout</b>
+                        </Button>
                     </Fragment>
                     }         
                 </Grid>
